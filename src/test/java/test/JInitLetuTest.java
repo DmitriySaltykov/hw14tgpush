@@ -1,6 +1,8 @@
 package test;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
@@ -19,6 +21,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 
 public class JInitLetuTest {
+        public void testYtSearch()
+            {
+                SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        }
 
     @Tags({
             @Tag("web"),

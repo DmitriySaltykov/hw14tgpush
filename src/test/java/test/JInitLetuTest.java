@@ -54,7 +54,7 @@ public class JInitLetuTest {
     @ParameterizedTest(name = "Youtube chanel  \"{0}\" should have text \"{1}\" in descreption.")
     void wikipediaShouldHaveTextInArticleTest(String testData, String expectedResult) {
 
-        open("https://www.youtube.com/");
+
         $("#search-input #search").val(testData).pressEnter();
         $(".style-scope ytd-channel-renderer").click();
         $(".style-scope ytd-channel-tagline-renderer").click();
@@ -77,7 +77,7 @@ public class JInitLetuTest {
     @ParameterizedTest(name = "Youtube chanel  \\\"{0}\\\" should have link \\\"{1}\\\" on Links descreption.\"")
     void YTJavaProvider(String java, List<String> characteristic) {
         Configuration.pageLoadStrategy = "eager";
-        open("https://www.youtube.com/");
+
 
 
         $("#search-input #search").val(java).pressEnter();

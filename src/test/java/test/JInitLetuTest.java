@@ -11,6 +11,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.slf4j.helpers.NOPMDCAdapter;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -20,7 +21,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class JInitLetuTest {
+public class JInitLetuTest extends TestBase {
         public void testYtSearch()
             {
                 SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
@@ -54,7 +55,7 @@ public class JInitLetuTest {
     @ParameterizedTest(name = "Youtube chanel  \"{0}\" should have text \"{1}\" in descreption.")
     void wikipediaShouldHaveTextInArticleTest(String testData, String expectedResult) {
 
-
+        open("https://www.youtube.com/");
         $("#search-input #search").val(testData).pressEnter();
         $(".style-scope ytd-channel-renderer").click();
         $(".style-scope ytd-channel-tagline-renderer").click();
@@ -79,7 +80,7 @@ public class JInitLetuTest {
         Configuration.pageLoadStrategy = "eager";
 
 
-
+        open("https://www.youtube.com/");
         $("#search-input #search").val(java).pressEnter();
         $(".style-scope ytd-channel-renderer").click();
 

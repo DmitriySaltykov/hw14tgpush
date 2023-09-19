@@ -28,7 +28,8 @@ public class JInitLetuTest {
 
     @Tags({
             @Tag("web"),
-            @Tag("search")
+            @Tag("search"),
+            @Tag("simple")
     })
     @DisplayName("Проверка наличия категорий на странице youtoobe")
     @ValueSource(strings = {"Главная" , "Shorts", "Подписки"})
@@ -41,7 +42,8 @@ public class JInitLetuTest {
     }
     @Tags({
             @Tag("web"),
-            @Tag("search")
+            @Tag("search"),
+            @Tag("simple")
     })
     @DisplayName("Проверка наличия описания на странице канала")
 
@@ -61,7 +63,8 @@ public class JInitLetuTest {
     }
     @Tags({
             @Tag("web"),
-            @Tag("search")
+            @Tag("search"),
+            @Tag("parametr")
     })
     @DisplayName("Проверка наличия табов странице канала")
     static Stream<Arguments> YTJavaProvider() {

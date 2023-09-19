@@ -48,15 +48,15 @@ tasks.withType(Test) {
 test {
     useJUnitPlatform()
 }
-task pageobject_test(type: Test) {
+task parametr_test(type: Test) {
     useJUnitPlatform {
-        includeTags("pageobject")
+        includeTags("parametr")
     }
 }
 
-task remote_test(type: Test) {
+task simple_test(type: Test) {
     useJUnitPlatform {
-        includeTags("remote")
+        includeTags("simple")
     }
 
 

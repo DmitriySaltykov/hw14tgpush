@@ -25,19 +25,23 @@ public class TestBase {
 //    }
     @BeforeAll
      static void beforeAll() {
-        Configuration.baseUrl = "https://www.youtube.com/";
-        Configuration.browserSize = System.getProperty("browserSize");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.remote = System.getProperty("remoteDriverUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+//        Configuration.baseUrl = "https://www.youtube.com/";
+//        Configuration.browserSize = System.getProperty("browserSize");
+//        Configuration.browser = System.getProperty("browser", "chrome");
+//        Configuration.browserVersion = System.getProperty("browserVersion");
+//        Configuration.remote = System.getProperty("remoteDriverUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+ //       Configuration.baseUrl = "https://www.youtube.com/";
+        Configuration.browserSize = "1920x1080";
+        Configuration.holdBrowserOpen = true;
+        Configuration.browser= "chrome";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+//        DesiredCapabilities capabilities = new DesiredCapabilities("");
+//        capabilities.setCapability("selenoid:options", Map.of(
+//                "enableVNC" , true,
+//                "enableVideo" , true
+//        ));
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.of(
-                "enableVNC" , true,
-                "enableVideo" , true
-        ));
-
-        Configuration.browserCapabilities = capabilities;
+//        Configuration.browserCapabilities = capabilities;
 
     }
 }

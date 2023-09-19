@@ -33,7 +33,7 @@ public class JInitLetuTest extends TestBase {
             @Tag("simple")
     })
     @DisplayName("Проверка наличия категорий на странице youtoobe")
-    @ValueSource(strings = {"Главная" , "Shorts", "Подписки"})
+    @ValueSource(strings = {"History" , "Shorts", "Trending"})
     @ParameterizedTest(name = "Youtube home page should have \"{0}\" categories.")
     void wikipediaHomePageShouldHaveLanguageTest(String testData) {
 
@@ -63,9 +63,10 @@ public class JInitLetuTest extends TestBase {
 
     }
     @Tags({
+            @Tag("parametr"),
             @Tag("web"),
-            @Tag("search"),
-            @Tag("parametr")
+            @Tag("search")
+
     })
     @DisplayName("Проверка наличия табов странице канала")
     static Stream<Arguments> YTJavaProvider() {

@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -38,7 +39,9 @@ public class JInitLetuTest extends TestBase {
     void wikipediaHomePageShouldHaveLanguageTest(String testData) {
 
         open("https://www.youtube.com/");
-        $(".style-scope ytd-guide-renderer").shouldHave(text(testData));
+        $("#ytd-button-renderer:nth-child(2) > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill").click();
+//        $(byText("Accept all")).click();
+        $("..style-scope ytd-guide-renderer").shouldHave(text(testData));
 
     }
     @Tags({
@@ -56,6 +59,8 @@ public class JInitLetuTest extends TestBase {
     void wikipediaShouldHaveTextInArticleTest(String testData, String expectedResult) {
 
         open("https://www.youtube.com/");
+       // $(byText("Accept all")).click();
+        $("#ytd-button-renderer:nth-child(2) > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill").click();
         $("#search-input #search").val(testData).pressEnter();
         $(".style-scope ytd-channel-renderer").click();
         $(".style-scope ytd-channel-tagline-renderer").click();
@@ -82,14 +87,11 @@ public class JInitLetuTest extends TestBase {
 
 
         open("https://www.youtube.com/");
+        $("#ytd-button-renderer:nth-child(2) > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill").click();
         $("#search-input #search").val(java).pressEnter();
         $(".style-scope ytd-channel-renderer").click();
 
         $("#tabsContainer").shouldHave(text(String.join(" ", characteristic)));
     }
-
-
-
-
 
 }
